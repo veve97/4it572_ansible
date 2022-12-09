@@ -39,7 +39,7 @@
         name:
           - docker
           - git
-        state:  latest
+        state: latest
         update_cache: yes
       become: yes
     - service:
@@ -51,7 +51,7 @@
       shell: systemctl enable docker
       become: yes
     - name: Set rights to Docker
-      shell: usermod -A -G docker ec2-user
+      shell: usermod -a -G docker ec2-user
       become: yes
 
     - name: Get project files from GIT
@@ -59,7 +59,7 @@
         repo: "https://github.com/veve97/4IT572_vevj00.git"
         dest: ./app
     - name: Build docker image
-      shell: cd app & docker build -t myeshop:latest .
+      shell: cd app && docker build -t myeshop:latest .
       become: yes
     - name: Run eshop
       shell: docker run -p 80:3000 myeshop
