@@ -10,6 +10,7 @@
         region: us-east-1
         key_name: key1
         vpc_subnet_id: subnet-0666cfb484d0a62c2
+        group: eshop
         count: 1
         assign_public_ip: yes
         wait: yes
